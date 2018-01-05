@@ -442,7 +442,24 @@ namespace Microsoft.EntityFrameworkCore
                 return _dbSet.Count(predicate);
             }
         }
-
+        
+        /// <summary>
+        /// Gets the CountAsync based on a predicate.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            if (predicate == null)
+            {
+                return _dbSet.CountAsync();
+            }
+            else
+            {
+                return _dbSet.CountAsync(predicate);
+            }
+        }
+        
         /// <summary>
         /// Inserts a new entity synchronously.
         /// </summary>

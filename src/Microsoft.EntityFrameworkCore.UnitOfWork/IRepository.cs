@@ -214,6 +214,13 @@ namespace Microsoft.EntityFrameworkCore
         int Count(Expression<Func<TEntity, bool>> predicate = null);
 
         /// <summary>
+        /// Gets the Contains based on a predicate.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        bool Contains(Expression<Func<TEntity, bool>> predicate = null);
+        
+        /// <summary>
         /// Inserts a new entity synchronously.
         /// </summary>
         /// <param name="entity">The entity to insert.</param>

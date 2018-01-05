@@ -444,6 +444,13 @@ namespace Microsoft.EntityFrameworkCore
         }
 
         /// <summary>
+        /// Gets the Contains based on a predicate.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public bool Contains(Expression<Func<TEntity, bool>> predicate = null) => Count(predicate) > 0;
+        
+        /// <summary>
         /// Inserts a new entity synchronously.
         /// </summary>
         /// <param name="entity">The entity to insert.</param>
